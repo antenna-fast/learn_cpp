@@ -1,4 +1,0 @@
-/home/yaohua/App/CLion/CLion-2020.1.1/clion-2020.1.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yaohua/CLionProjects/learn_cpp/cpp_class
--- Configuring done
--- Generating done
--- Build files have been written to: /home/yaohua/CLionProjects/learn_cpp/cpp_class/cmake-build-debug

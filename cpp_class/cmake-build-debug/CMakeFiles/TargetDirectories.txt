@@ -1,3 +1,0 @@
-/home/yaohua/CLionProjects/learn_cpp/cpp_class/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/yaohua/CLionProjects/learn_cpp/cpp_class/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/yaohua/CLionProjects/learn_cpp/cpp_class/cmake-build-debug/CMakeFiles/cpp_class.dir

@@ -17,7 +17,7 @@ int main(){
     for (auto x:a){
         cout << "a: " << x << endl;
     }
-
+    
     // iter
     auto a_iter = a.begin();
     while (a_iter != a.end()){

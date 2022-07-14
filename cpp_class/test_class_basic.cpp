@@ -10,9 +10,9 @@ using namespace std;
 // class 关键字
 // 类名
 class Point3D {
-// 访问标志符
-// 变量
-// 方法
+// 访问标志符:
+// 变量;
+// 方法;
 
 // 变量
 public:

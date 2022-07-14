@@ -24,9 +24,12 @@ public:
 
 // functor: 重载()运算符
 struct add_x{
-    explicit add_x(int val):x(val){}  // construct function
+    // construct function 
+    // 给成员变量赋值
+    explicit add_x(int val):x(val){}  
 
-    int operator()(int y) const {return x+y;}   // 重载()
+    int operator()(int y) const {return x+y;}   // 重载() operator
+
 private:
     int x;
 };
@@ -44,7 +47,7 @@ int main(){
     po.print(c);
 
     // test functor
-    add_x add_99(99);  // init
+    add_x add_99(99);  // 实例化
     int res = add_99(81);
     cout << "res: " << res << endl;
 

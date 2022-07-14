@@ -20,7 +20,7 @@ void test_swap(int &a, int &b){  // 参数表需要指明&
 
 // 指针传递
 void test_pointer(int *a){  // 参数表需要指明*
-    *a = *a + 1;  // 函数内部操作，需要取值*
+    *a = *a + 1;  // 函数内部操作，需要显式取值*
 }
 
 // 函数内部新建了地址变量
@@ -38,11 +38,12 @@ T add_1(T a){
 }
 
 // 函数指针
-//  原函数
+// 普通函数
 int fun_add(int a, int b){
     return a + b;
 }
-// 函数指针声明
+// 函数指针
+// 其中，p_fun_add是一个指针函数名，后面的是参数列表
 int (*p_fun_add) (int, int) = fun_add;
 
 
@@ -72,16 +73,21 @@ int main(){
     test_pointer(&dd);
     cout << dd << endl;
 
+    // 函数模板
+    cout << "函数模板" << endl;
     int aa = 1;
     cout << add_1(aa) << endl;
 
     double bb = 1;
     cout << add_1(bb) << endl;
 
-    cout << "p_fun_add: " << (*p_fun_add)(3, 4) << endl;
-
     const int x_1 = 1;
     cout << add_1(x_1) << endl;
 
+    // 函数指针
+    cout << "函数指针 p_fun_add: " << (*p_fun_add)(3, 4) << endl;
+
+    // inline 内联函数
+    
     return 0;
 }

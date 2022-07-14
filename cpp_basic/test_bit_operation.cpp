@@ -11,8 +11,9 @@ int main(){
 
     unsigned int a = 2;
     unsigned int b = 3;
-
+    // 异或
     cout << (a ^ b) << endl;
+    // 
     cout << (a & b) << endl;
     cout << (a | b) << endl;
     cout << (~a) << endl;

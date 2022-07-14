@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(
         cpp_11
-#        test_ptr.cpp
-#        test_for.cpp
+        # test_right_ref.cpp
+        # test_ptr.cpp
+        # test_for.cpp
         test_lambda.cpp
 )

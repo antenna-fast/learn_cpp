@@ -9,11 +9,12 @@ using namespace std;
 
 int main(){
     vector<int> a;
-    a.reserve(10);
+    cout << "push_back " << endl;
     for (int i = 0; i < 10; ++i) {
         a.push_back(i);
     }
 
+    cout << "auto: " << endl;
     for (auto x:a){
         cout << "a: " << x << endl;
     }

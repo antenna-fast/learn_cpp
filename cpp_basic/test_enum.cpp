@@ -24,12 +24,24 @@ enum eTrackingState{
     LOST=3
 };
 
+enum Stage {
+STAGE_PAUSED,
+STAGE_FIRST_FRAME,
+STAGE_SECOND_FRAME,
+STAGE_DEFAULT_FRAME,
+STAGE_RELOCALIZING
+};
+
+Stage s;
 
 int main()
 {
-    cout << "Hello! " << a << endl;
-    cout << "Hello! " << b << endl;
-    cout << "Hello! " << c << endl;
+    cout << "a: " << a << endl;
+    cout << "b: " << b << endl;
+    cout << "c: " << c << endl;
+
+    s = STAGE_RELOCALIZING;
+    cout << "s: " << s << endl;
 
     eTrackingState mState;
     cout << mState << endl;

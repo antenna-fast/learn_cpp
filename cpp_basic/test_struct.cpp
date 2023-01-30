@@ -12,6 +12,10 @@ typedef struct Student{
     string name;
     int age;
     float score;
+
+    Student():name("empty"), age(0), score(0.0) {}
+    Student(string name_, int age_, float score_):name(name_), age(age_), score(score_) {}
+    
 } Student;
 
 // 等效：

@@ -8,7 +8,8 @@ using namespace std;
 
 // 函数模板
 // swap函数
-template<typename T> void Swap(T *a, T *b){
+template<typename T> 
+void Swap(T *a, T *b){
     T tmp = *a;
     *a = *b;
     *b = tmp;
@@ -30,6 +31,7 @@ public:
 
     // 普通成员函数
     void SetXY(T1 t_x, T2 t_y);
+
 private:
     T1 x;
     T2 y;
@@ -62,8 +64,10 @@ int main(){
 
     // 类模板
     // 实例化1
+    // NOTE: we should assign typename when init a instance
     Point<int, int> point_1(10, 10);
     point_1.SetXY(20, 20);
+
     // 实例化2
     Point<double, int> point_2(10.2, 10);
 

@@ -1,6 +1,4 @@
-//
 // Created by yaohua on 2022/4/29.
-// 动态内存
 
 #include <iostream>
 

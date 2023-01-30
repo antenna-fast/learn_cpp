@@ -9,12 +9,13 @@ using namespace std;
 
 int main(){
 
-    // C风格
+    // 1. type transform
+    // 1.1 C style
     double x = 2.998;
     int y = (int) x;
     cout << "y: " << y << endl;
 
-    // C++风格
+    // 1.2 C++ style
 
     // static_cast 
     // 使用static_cast可以明确告诉编译器，这种损失精度的转换是在知情的情况下进行的，

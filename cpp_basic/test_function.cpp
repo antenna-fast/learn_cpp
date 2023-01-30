@@ -1,12 +1,13 @@
-//
 // Created by yaohua on 2022/4/27.
-//
+
 
 #include <iostream>
+#include <typeinfo>
 
 using namespace std;
 
 // 函数的参数
+
 // 引用传递
 void test_double(int &a){
     a = 2 * a;  // 改变形参的value，就会改变实参的value
@@ -29,12 +30,19 @@ void test_pointer(int *a){  // 参数表需要指明*
 void test_pointer(double *p){
     double *pp = p;
     *pp += 999;
+    // *p += 999;
 }
 
-// 函数模板
+// function template
 template<class T>
-T add_1(T a){
+T add_1(T a){  // return_type, func_name(parameter list)
     return a + 1;
+}
+
+template<typename T>
+void hello_T(const T& var_in){
+    std::cout << "from hello_T: hello, " << var_in << " typeinfo: " << typeid(var_in).name() << std::endl; 
+
 }
 
 // 函数指针
@@ -73,7 +81,7 @@ int main(){
     test_pointer(&dd);
     cout << dd << endl;
 
-    // 函数模板
+    // Template Function
     cout << "函数模板" << endl;
     int aa = 1;
     cout << add_1(aa) << endl;
@@ -84,7 +92,12 @@ int main(){
     const int x_1 = 1;
     cout << add_1(x_1) << endl;
 
-    // 函数指针
+    hello_T("123");
+
+    int b = 123;
+    hello_T(b);
+
+    // Pointer Function
     cout << "函数指针 p_fun_add: " << (*p_fun_add)(3, 4) << endl;
 
     // inline 内联函数

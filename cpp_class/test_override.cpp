@@ -20,9 +20,10 @@ public:
     }
 };
 
-// 重载运算符
 
-// functor: 重载()运算符
+// operator overload
+
+// functor: 重载() operator
 struct add_x{
     // construct function 
     // 给成员变量赋值

@@ -9,10 +9,11 @@
 using namespace std;
 
 int main(){
+
     // shared ptr
     // 创建
     // 空的 shared_ptr 指针，其初始引用计数为 0，而不是 1。
-    shared_ptr<int> p_1;
+    shared_ptr<int> p_1;  
     shared_ptr<int> p_2(nullptr);  // 构造函数初始化
 
     // 创建时明确指向的对象 下面两个是一样的

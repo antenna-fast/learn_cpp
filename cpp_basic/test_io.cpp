@@ -9,11 +9,11 @@ using namespace std;
 
 int main(){
     // 标准输入输出
-    // 输出
+    // 屏幕输出
     char var_str[] = "Hello, C++!";
     cout << var_str << endl;
 
-    // 输入
+    // 按键输入
     char name[50];
     cout << "input your name: ";
     cin >> name;

@@ -16,26 +16,43 @@ bool void_test(int s){
 }
 
 template <typename T>
-void print_vector(vector<T> &input_vector){
+void print_vector(const vector<T> &input_vector){
     for (size_t i = 0, length = input_vector.size(); i < length; i++){
-        cout << input_vector[i] << endl;
+        cout << "element " << i << ": " << input_vector[i] << endl;
     }
     return;
 }
 
 int main(){
-    std::cout << "STL test .. " << endl;
+    std::cout << "STL test" << endl;
+
+    vector<float> vf(42709547);
+
+    // vector的初始化
+    // 不使用(空)构造函数
     vector<int> vec_1;
-    std::cout << "size of vector: " << vec_1.size() << endl;
+    std::cout << "size of vec_1: " << vec_1.size() << endl;
+    
+    // 构造函数 (元素个数)
+    vector<int> vec_2(4);
+    std::cout << "size of vec_2: " << vec_2.size() << endl;
+    // print_vector(vec_2);
 
-    const int vec_length = 10;
+    // 构造函数 (元素个数, 元素数值)
+    vector<int> vec_3(3, 888);
+    std::cout << "size of vec_3: " << vec_3.size() << endl; 
+    print_vector(vec_3);
 
+    // 动态添加元素
     // push value to vector
+    const int vec_length = 10;
     for (int i = 0; i < vec_length; i++) {
         vec_1.emplace_back(i);
     }
+    // 查看元素个数
     std::cout << "size of vector: " << vec_1.size() << endl;
-    std::cout << "capaticity of vector: " << vec_1.capacity() << endl;
+    // 查看容量
+    std::cout << "capacity of vector: " << vec_1.capacity() << endl;  
 
     // get value of vector
     for (int j = 0; j < vec_length; ++j) {

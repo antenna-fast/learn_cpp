@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(
         cpp_stl
         # test_array.cpp
-        test_vector.cpp
+        # test_vector.cpp
         # test_pair.cpp
         # test_map.cpp
-        # test_set.cpp
+        test_set.cpp
         # test_stack.cpp
 )

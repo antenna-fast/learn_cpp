@@ -74,7 +74,7 @@ void test_with_lock()
 
 // reference 
 // you should use 'ref' or 'cref'
-void add_1(int &a){
+void add_1(int &a) {
   a++;
 }
 

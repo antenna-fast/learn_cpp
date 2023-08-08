@@ -11,14 +11,14 @@
 using namespace std;
 
 
-bool void_test(int s){
+bool void_test(int s) {
     return s != 0;
 }
 
 template <typename T>
-void print_vector(const vector<T> &input_vector){
-    for (size_t i = 0, length = input_vector.size(); i < length; i++){
-        cout << "element " << i << ": " << input_vector[i] << endl;
+void print_vector(const vector<T> &input_vector) {
+    for (size_t i = 0, length = input_vector.size(); i < length; i++) {
+        cout << "idx: " <<  i << ": " << input_vector[i] << endl;
     }
     return;
 }
@@ -56,7 +56,7 @@ int main(){
 
     // get value of vector
     for (int j = 0; j < vec_length; ++j) {
-        std::cout << "value of vec_1 in " << j << ": " << vec_1[j] << endl;
+        std::cout << "value of vec_1 idx " << j << ": " << vec_1[j] << endl;
     }
 
     // using iterator 迭代器
@@ -93,12 +93,27 @@ int main(){
     string ss = "12344";
     cout << "hhh: " << ss[2] << "  " << ss.size() << endl;
 
-    // lambda[??]
+    // lambda
     cout << "count if: " << count_if(vec_1.begin(), vec_1.end(), void_test) << endl;
 
     // fill: 用value填充vector
     std::fill(vec_1.begin(), vec_1.end(), -1);
     print_vector(vec_1);
+
+
+    // erase data from vector, it can be used to practice sliding-window
+    size_t window_length = 10;
+    vector<int> sensor_window;
+    for (size_t i = 0; i < 24; i++)
+    {
+        sensor_window.emplace_back(i);
+    }
+    
+    sensor_window.erase(sensor_window.begin(), sensor_window.begin() + (sensor_window.size() - window_length));
+    for (auto & i : sensor_window)
+    {
+        cout << "i: " << i << endl;
+    }
 
     // 生成随机数
     vector<int> var_rand(100);

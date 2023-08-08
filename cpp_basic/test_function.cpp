@@ -2,6 +2,7 @@
 
 
 #include <iostream>
+#include <vector>
 #include <typeinfo>
 
 using namespace std;
@@ -9,25 +10,26 @@ using namespace std;
 // 函数的参数
 
 // 引用传递
-void test_double(int &a){
+// 参数表需要指明&
+void test_double(int &a) {
     a = 2 * a;  // 改变形参的value，就会改变实参的value
 }
 
-void test_swap(int &a, int &b){  // 参数表需要指明&
+void test_swap(int &a, int &b) {  
     int tmp = a;  // 函数内部操作，不需要*
     a = b;
     b = tmp;
 }
 
 // 指针传递
-void test_pointer(int *a){  // 参数表需要指明*
+void test_pointer(int *a) {  // 参数表需要指明*
     *a = *a + 1;  // 函数内部操作，需要显式取值*
 }
 
 // 函数内部新建了地址变量
 // 对地址变量指向的内容进行操作
 // 和p的含义一样，所以，pp变量无意义
-void test_pointer(double *p){
+void test_pointer(double *p) {
     double *pp = p;
     *pp += 999;
     // *p += 999;
@@ -40,20 +42,33 @@ T add_1(T a){  // return_type, func_name(parameter list)
 }
 
 template<typename T>
-void hello_T(const T& var_in){
-    std::cout << "from hello_T: hello, " << var_in << " typeinfo: " << typeid(var_in).name() << std::endl; 
-
+void hello_T(const T& var_in) {
+    std::cout << "from hello_T: hello, " << var_in << 
+                " typeinfo: " << typeid(var_in).name() << std::endl; 
 }
 
 // 函数指针
 // 普通函数
-int fun_add(int a, int b){
+int fun_add(int a, int b) {
     return a + b;
 }
 // 函数指针
 // 其中，p_fun_add是一个指针函数名，后面的是参数列表
 int (*p_fun_add) (int, int) = fun_add;
 
+
+// const
+const int add_1(int a, int b) {
+    return a + b;
+}
+
+
+// test array parameter
+template<typename T>
+void print_array(const T arr[3])
+{
+    cout << "arr: " << arr[0] << ", " << arr[1] << ", " << arr[2] << endl;
+}
 
 int main(){
 
@@ -102,5 +117,13 @@ int main(){
 
     // inline 内联函数
     
+    // const
+    int i = add_1(1, 2);
+    cout << "i: " << i << endl;
+    i = 5;
+
+    float float_arr[6] = {10, 10, 10, 10};
+    print_array(float_arr);
+
     return 0;
 }

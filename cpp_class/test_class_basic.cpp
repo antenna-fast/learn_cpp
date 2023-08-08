@@ -1,6 +1,4 @@
-//
 // Created by yaohua on 2022/4/28.
-//
 
 #include <iostream>
 #include <vector>
@@ -13,13 +11,12 @@ using namespace std;
 // class basic
 
 class Point3D {
-// access signature: public, private
-
 // Variable
 // public var
 public:
     double x;
     double y;
+    double z;
 
 // private var
 private:
@@ -29,20 +26,22 @@ private:
 // public member function: user interface
 public:  
     // constructor
+    Point3D() {};
 
     // constructor with parameters
-    Point3D(double t_x, double t_y, int t_a):x(t_x), y(t_y), a(t_a){}
+    Point3D(double t_x, double t_y, int t_z) : x(t_x), y(t_y), z(t_z) {}
 
     // copy constructor (will be generated automticaly by compiler)
     // if we hand-write it, will perform this
     Point3D(const Point3D& p) {
         x = p.x;
         y = p.y;
-
+        z = p.z;
         a = p.a;
     }
 
-    void get() const;
+    void get() const;  // note: const body
+    void set(double x_, double y_);
 
     // friend member function
     friend void printVar(Point3D point3d);
@@ -54,9 +53,19 @@ public:
 
 
 // 成员函数定义
+// const after member function name:
+//   it will not change member variable
 void Point3D::get() const {
+    // x = 0;  // this operation is forbidden!
     cout << "x: " << x << "  y: " << y << endl;
 }
+
+void Point3D::set(double x_, double y_)
+{
+    x = x_;  // this operation is permit, because this is not a "const body"
+    y = y_;
+}
+
 
 // 友元函数定义
 // 类的友元，提供了类成员的访问权限
@@ -78,10 +87,12 @@ public:
 
 
 private:
-    
+    Point3D    position;
+
 };
 
 
+/// Disable copy constructor using boost
 class Map : boost::noncopyable
 {
 public:
@@ -94,33 +105,6 @@ private:
 
 };
 
-
-// test singleton mode
-class Tracker
-{
-public:
-    Tracker(){}
-    Tracker(int a) { x = a;}
-    ~Tracker(){}
-
-    static Tracker* getInstance()
-    {
-        if(instance == NULL)
-        {
-            instance = new Tracker();
-        }
-        return instance;
-    }
-
-    int x;
-
-private:
-    static Tracker* instance;
-
-};
-
-
-Tracker* Tracker::instance = NULL;
 
 int main(){
     Point3D point_1(1, 2, 2);
@@ -145,18 +129,6 @@ int main(){
     FramePtr frame_2(frame_1);  // ok!
     FramePtr frame_3 = frame_1; // ok!
 
-
-    // test default constructor 
-    // Tracker tracker_1(1);
-    // cout << "tracker_1.x: " << tracker_1.x << endl;
-
-    // test singleton mode
-    // yes, you will see that, *p_tracker_1 = *p_tracker_2
-    Tracker *p_tracker_1 = Tracker::getInstance();
-    cout << "p_tracker_1: " << p_tracker_1 << endl;
-
-    Tracker *p_tracker_2 = Tracker::getInstance();
-    cout << "p_tracker_2: " << p_tracker_2 << endl;
 
     // test friend function
     printVar(point_3);

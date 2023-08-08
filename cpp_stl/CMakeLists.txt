@@ -9,6 +9,8 @@ add_executable(
         # test_vector.cpp
         # test_pair.cpp
         # test_map.cpp
-        test_set.cpp
+        # test_set.cpp
         # test_stack.cpp
+        # test_queue.cpp
+        test_deque.cpp
 )

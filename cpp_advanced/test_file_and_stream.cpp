@@ -8,6 +8,8 @@
 #include <sstream>
 #include <vector>
 
+#include <unistd.h>
+
 
 using namespace std;
 
@@ -57,10 +59,19 @@ int main(){
     // 实例化
     ofstream output_file;      
     output_file.open("test.txt");  // open file
+    // output_file.open("test.txt", std::ios_base::app);  // open file
+
     // write to file stream
-    output_file << 123 << "\n"
-                << 456 << "\n"
-                << 789 << "\n";
+
+    for(size_t i = 0; i<1; i++) 
+    {
+        output_file << 123 << "\n";
+        sleep(2);
+        output_file << 456 << "\n";
+        sleep(2);
+        output_file << 789 << "\n";
+        sleep(2);
+    }
     // close file
     output_file.close();  
 

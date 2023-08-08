@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 int main(int argc, char** argv){
     if(argc != 1){
         cout << " argc not match, Usage: " << endl;
@@ -19,8 +20,8 @@ int main(int argc, char** argv){
     // b = 3;       // error, can not modify value
 
     // demo2: const T*
-    // can modify itself
-    // can not modify its->value
+    // Can modify ptr itself
+    // can Not modify ptr->value
     const int* c = &b;
     // *c = 2;      // error, can not modify const ptr's value 
     int d = 1;
@@ -29,8 +30,8 @@ int main(int argc, char** argv){
 
     // demo3: T* const
     // const ptr
-    // can modify modify its->value
-    // can not modify itself
+    // Can modify modify its->value
+    // can Not modify itself
     int* const e = &d;
     int f = 2;
     // e = &f; // error, can not modify ptr itself 

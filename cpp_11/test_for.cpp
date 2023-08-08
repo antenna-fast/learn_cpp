@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
     vector<int> a;
     cout << "push_back " << endl;
     for (int i = 0; i < 10; ++i) {
@@ -15,13 +15,13 @@ int main(){
     }
 
     cout << "auto: " << endl;
-    for (auto x:a){
-        cout << "a: " << x << endl;
+    for (auto x:a) {
+        cout << "x: " << x << endl;
     }
     
     // iter
     auto a_iter = a.begin();
-    while (a_iter != a.end()){
+    while (a_iter != a.end()) {
         cout << "aIter: " << *a_iter << endl;
         a_iter ++;
     }

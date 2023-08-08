@@ -4,7 +4,6 @@
 
 #include <iostream>
 
-
 using namespace std;
 
 
@@ -25,14 +24,13 @@ enum eTrackingState{
 };
 
 enum Stage {
-STAGE_PAUSED,
-STAGE_FIRST_FRAME,
-STAGE_SECOND_FRAME,
-STAGE_DEFAULT_FRAME,
-STAGE_RELOCALIZING
+    STAGE_PAUSED,
+    STAGE_FIRST_FRAME,
+    STAGE_SECOND_FRAME,
+    STAGE_DEFAULT_FRAME,
+    STAGE_RELOCALIZING
 };
 
-Stage s;
 
 int main()
 {
@@ -40,11 +38,12 @@ int main()
     cout << "b: " << b << endl;
     cout << "c: " << c << endl;
 
-    s = STAGE_RELOCALIZING;
-    cout << "s: " << s << endl;
-
     eTrackingState mState;
     cout << mState << endl;
+
+    Stage s;
+    s = STAGE_RELOCALIZING;
+    cout << "s: " << s << endl;
 
     return 0;
 }

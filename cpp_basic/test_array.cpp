@@ -13,7 +13,7 @@ int main(int argc, char** argv){
     // declaration a array:
     // data_type var_name[num_of_element]
     int a[3];
-    cout << a << endl;
+    cout << "a: " << a << endl;
 
     // declaration with init
     int b[] = {1, 2, 3};

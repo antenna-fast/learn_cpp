@@ -65,7 +65,16 @@ int test_for_each()
 
 int main(int argc, char** argv){
     
-    test_for_each();
+    // test_for_each();
 
+    for (size_t i = 0, i3 = 0; i < 5; ++i)  // i: face_num
+    {
+        for (size_t j = 0; j < 3; ++j, ++i3)
+        {
+            // here i3 = i*3 + j
+            std::cout << "i3: " << i3 << std::endl;
+        }        
+    }
+    
     return 0;
 }

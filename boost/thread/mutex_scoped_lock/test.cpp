@@ -26,14 +26,15 @@ void print_block_scoped_lock (int n, char c) {
     boost::mutex::scoped_lock lock(mtx);
     for (int i=0; i<n; ++i) 
     { 
-    std::cout << c;
+      std::cout << c;
     }
     std::cout << '\n';
-    //   mtx.unlock();  // NOTE: if you forget to unlock, the other thread called this code fragment will be blocked!
+    //   mtx.unlock();  // NOTE: if you forget to unlock after mtx.lock(), the other thread called this code fragment will be blocked!
 
-    // now, you do NOT have to un lock here! 
-    // because the scoped lock is smart lock which can release automatically
+    // now using scoped_lock(), you do NOT have to un lock here! 
+    // because the scoped lock is smart lock which can release automatically!
 }
+
 
 void test_with_lock()
 {

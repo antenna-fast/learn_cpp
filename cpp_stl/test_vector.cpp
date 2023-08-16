@@ -43,6 +43,10 @@ int main(){
     std::cout << "size of vec_3: " << vec_3.size() << endl; 
     print_vector(vec_3);
 
+    // init 2D vector
+    vector<vector<int> > v_int(3, vector<int>(4) );
+    std::cout << "v_int: " << v_int.at(0).at(0) << std::endl;
+
     // 动态添加元素
     // push value to vector
     const int vec_length = 10;

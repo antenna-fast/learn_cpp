@@ -3,6 +3,9 @@
 
 
 // code ref: https://en.cppreference.com/w/cpp/thread/condition_variable
+// ref: 
+// https://cloud.tencent.com/developer/article/1584067
+// 生产者消费者模式: https://zhuanlan.zhihu.com/p/73442055
 
 #include <iostream>
 #include <string>
@@ -21,17 +24,26 @@ bool processed = false;
 void worker_thread()
 {
     // wait untail main() send data
-    std::unique_lock<std::mutex> lk(m);
+
+    // Acquire a std::unique_lock<std::mutex> on the mutex used to protect the shared variable
+    std::unique_lock<std::mutex> lk(m); 
+
     cv.wait(lk, [] {return ready;});
 
     // after the wait, worker own the lock
-    cout << "Worker start processing" << endl;
+    std::cout << "Worker start processing" << endl;
     data += " after worker process";
 
+    // Send data back to main()
     processed = true;
     cout << "Worker process done" << endl;
+
+    // Manual unlocking is done before notifying, to avoid waking up
+    // the waiting thread only to block again (see notify_one for details)    
     lk.unlock();
-    cv.notify_one();
+
+    // wakeup one thread who are waitting for me
+    cv.notify_one(); 
 }
 
 
@@ -49,9 +61,9 @@ int main(int argc, char** argv)
     // define the data
     data = "Example data from main";
 
-    // send data to worker
+    // main() send data ready to worker thread
     {
-        std::lock_guard<mutex> lk(m);
+        std::lock_guard<std::mutex> lk(m);
         ready = true;
         cout << "main() data ready" << endl;
     }

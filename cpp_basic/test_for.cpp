@@ -64,16 +64,36 @@ int test_for_each()
 
 
 int main(int argc, char** argv){
-    
+    cout << "argc: " << argc << endl;
+
     // test_for_each();
 
-    for (size_t i = 0, i3 = 0; i < 5; ++i)  // i: face_num
+    // for (size_t i = 0, i3 = 0; i < 5; ++i)  // i: face_num
+    // {
+    //     for (size_t j = 0; j < 3; ++j, ++i3)
+    //     {
+    //         // here i3 = i*3 + j
+    //         std::cout << "i3: " << i3 << std::endl;
+    //     }        
+    // }
+
+    int j = 0;
+    vector<int> v(10);
+
+    for(int i = 0; i<10; i++)
     {
-        for (size_t j = 0; j < 3; ++j, ++i3)
-        {
-            // here i3 = i*3 + j
-            std::cout << "i3: " << i3 << std::endl;
-        }        
+        v[j++] = i;
+        // v[++j] = i;
+
+        // equal written:
+        // v[j] = i;
+        // j++;
+    }
+    v.reserve(j);
+
+    for (size_t i = 0; i < v.size(); i++)
+    {
+        std::cout << v[i] << std::endl;
     }
     
     return 0;

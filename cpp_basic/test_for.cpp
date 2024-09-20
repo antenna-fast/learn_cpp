@@ -63,9 +63,16 @@ int test_for_each()
 }
 
 
-int main(int argc, char** argv){
+int main(int argc, char** argv)
+{
     cout << "argc: " << argc << endl;
 
+    int i = 0;
+    while (1)
+    {
+        i++;
+    }
+    
     // test_for_each();
 
     // for (size_t i = 0, i3 = 0; i < 5; ++i)  // i: face_num

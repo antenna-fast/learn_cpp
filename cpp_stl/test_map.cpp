@@ -10,15 +10,19 @@
 using namespace std;
 
 
-int main(){    
+int main()
+{    
     // 1. 默认构造函数
     map<string, string> var_map;
 
     // 2. 构建时初始化
-    map<string, string> map_2{{"1", "2"}, {"3", "4"}};
+    map<string, string> map_2{
+                            {"1", "2"}, 
+                            {"3", "4"}
+                            };
 
     // 3. 移动构造函数
-    map<string, int>    map_3{make_pair("99", 81)};
+    map<string, int> map_3{make_pair("99", 81)};
 
     // 4. copy constructor
     map<string, string> map_4(map_2);
@@ -30,13 +34,15 @@ int main(){
     // 访问map元素
     // 1. 迭代器 while
     auto iter_var_map = var_map.begin();  // sorted
-    while (iter_var_map != var_map.end()){
+    while (iter_var_map != var_map.end())
+    {
         cout << "first: " << iter_var_map->first << " second: " << iter_var_map->second << endl;
         iter_var_map ++;
     }
     
     // for
-    for(auto const& mtmp : var_map){
+    for(auto const& mtmp : var_map)
+    {
         cout << "auto first: " << mtmp.first << "  auto second: " << mtmp.second << endl;
     }
 

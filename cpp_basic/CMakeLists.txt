@@ -10,7 +10,7 @@ add_executable(cpp_basic
         # test_array.cpp
         # test_tie_tuple.cpp
         # test_for.cpp
-        # test_string.cpp
+        test_string.cpp
         # test_enum.cpp
         # test_function.cpp
         # test_function_main.cpp
@@ -24,5 +24,5 @@ add_executable(cpp_basic
 
         # test_namespace.cpp
         # test_const.cpp
-        test_left_right_value.cpp
+        # test_left_right_value.cpp
         )

@@ -7,7 +7,10 @@ find_package(Boost REQUIRED COMPONENTS system filesystem)
 
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS}) 
-    add_executable(test_boost test_copy.cpp)
+    add_executable(test_boost 
+                    test_copy.cpp
+                    # get_filelist.cpp
+                    )
     link_directories(test_boost ${Boost_LIBRARY_DIRS})
     target_link_libraries(test_boost ${Boost_LIBRARIES})
 endif()

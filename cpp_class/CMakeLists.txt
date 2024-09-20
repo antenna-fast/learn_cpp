@@ -6,10 +6,10 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(
         cpp_class
         # test_class_basic.cpp
-        # test_class_static.cpp
+        test_class_static.cpp
         # test_override.cpp
         # test_inheritance.cpp
         # test_polymorphism.cpp
         # test_functor.cpp
-        test_explicit.cpp
+        # test_explicit.cpp
 )

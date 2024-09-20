@@ -24,23 +24,22 @@ inline void printProgressBar(float progress)
 }
 
 
-
 int main(int argc, char** argv){
     cout << argv[0] << endl;
     
-    // boost::filesystem::copy_file("1.txt", "2.txt", boost::filesystem::copy_option::overwrite_if_exists);
+    boost::filesystem::copy_file("1.txt", "2.txt", boost::filesystem::copy_option::overwrite_if_exists);
 
-    int loop=3;
-    while (loop-- >0)  // 2 1 0 
-    // while (--loop >0)     // 2 1
-    {
-        cout << loop << endl;
-    }
+    // int loop=3;
+    // while (loop-- >0)  // 2 1 0 
+    // // while (--loop >0)     // 2 1
+    // {
+    //     cout << loop << endl;
+    // }
 
-    for (size_t i = 0; i <= 100; i++)
-    {
-        printProgressBar(i / 100.0);
-    }
+    // for (size_t i = 0; i <= 100; i++)
+    // {
+    //     printProgressBar(i / 100.0);
+    // }
 
     return 0;
 }

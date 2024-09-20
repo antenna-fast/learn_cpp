@@ -13,6 +13,8 @@ int main(int argc, char** argv){
     //     return -1;
     // }
 
+    // usage ./test_gflag -a=0 -b=123
+
     std::cout << "running: " << argv[0] << std::endl;
     
     google::ParseCommandLineFlags(&argc, &argv, true);

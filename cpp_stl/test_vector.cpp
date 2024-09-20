@@ -29,6 +29,8 @@ int main(){
     vector<float> vf(42709547);
 
     // vector的初始化
+    // ref: https://blog.csdn.net/veghlreywg/article/details/80400382
+
     // 不使用(空)构造函数
     vector<int> vec_1;
     std::cout << "size of vec_1: " << vec_1.size() << endl;
@@ -43,6 +45,20 @@ int main(){
     std::cout << "size of vec_3: " << vec_3.size() << endl; 
     print_vector(vec_3);
 
+    // iter copy
+    vector<int> src;
+    for (size_t i = 0; i < 10; i++)
+    {
+        src.push_back(i);
+    }
+
+    cout << "iter copy: " << endl;
+    vector<int> dst(src.begin(), src.begin()+3);  // 3: increment num=3, idx=2
+    for (size_t i = 0; i < dst.size(); i++)
+    {
+        cout << dst.at(i) << endl;
+    }
+    
     // init 2D vector
     vector<vector<int> > v_int(3, vector<int>(4) );
     std::cout << "v_int: " << v_int.at(0).at(0) << std::endl;

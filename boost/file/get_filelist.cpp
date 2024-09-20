@@ -8,7 +8,7 @@
 using namespace std;
 namespace fs = boost::filesystem;
 
- 
+
 int get_filenames(const std::string& dir, std::vector<std::string>& filenames)
 {
 	fs::path path(dir);
@@ -25,11 +25,27 @@ int get_filenames(const std::string& dir, std::vector<std::string>& filenames)
 			filenames.push_back(iter->path().string());
 		}
  
-		if (fs::is_directory(iter->status()))
-		{
-			get_filenames(iter->path().string(), filenames);
-		}
+		// if (fs::is_directory(iter->status()))
+		// {
+		// 	get_filenames(iter->path().string(), filenames);
+		// }
 	}
  
 	return filenames.size();
+}
+
+
+int main()
+{
+	// string folder_path = "/home/antenna/ssd/TongZhou/0919/images";
+	string folder_path = "/home/antenna/ssd/TongZhou/0919";
+
+	std::vector<std::string> file_list;
+	get_filenames(folder_path, file_list);
+
+	for (size_t i = 0; i < file_list.size(); i++)
+	{
+		cout << file_list.at(i) << endl;
+	}
+	
 }

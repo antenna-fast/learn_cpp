@@ -9,7 +9,8 @@ using namespace std;
 
 
 // 数组指针 
-void arr_pointer(){
+void arr_pointer()
+{
     int a[4] = {1,2,3,4};  // a是数组名，指向数组的第0个元素，表示数组的首地址
     // a = {5, 6, 7, 8};  // 数组名是常量，不可以被改变
 
@@ -38,7 +39,8 @@ void arr_pointer(){
 
 
 // 普通指针，指向数组首元素
-void arr_pointer1(){
+void arr_pointer1()
+{
     int numElements = 10;
     // 动态分配内存
     float *pA = (float *)malloc(numElements * sizeof(float));
@@ -58,8 +60,19 @@ void arr_pointer1(){
     return;
 }
 
-int main(){
-    cout << "ointer test " << endl;
+
+int b = 998;
+
+// void change_val(int* &a)  // right  a: 指针的引用, ok
+void change_val(int* a)  
+{
+    a = &b;  // wrong, it will not work, because this operation only change pointer's position
+    // *a = 100;
+} 
+
+int main()
+{
+    cout << "pointer test " << endl;
 
     // arr_pointer();
 
@@ -73,6 +86,7 @@ int main(){
     int var_3 = 666;
     int *p_var_1;  // 指针变量
     p_var_1 = &var_3;
+
     cout << "var_3: " << var_3
         << " p_var: " << p_var_1
         << " v_p_var: " << *p_var_1 << endl;
@@ -84,6 +98,35 @@ int main(){
     int *p_var_9 = p_var_8;
     p_var_9 = &var_3;  // 改变了p_var_9的，看是否会影响p_var_8的value
     cout << "p_var_8: " << *p_var_8 << endl;  // 不会
+
+    // test pointer function
+    int var_no_p;
+    // change_val(&var_no_p);
+    // cout << "var_no_p: " << var_no_p << endl;
+
+    int *var=&var_no_p;
+    change_val(var);
+    cout << "var after change_val: " << *var << endl;
+    
+
+    // int* &  指针的引用
+    // ref: https://blog.csdn.net/fatfish_/article/details/86768887
+
+    int* & var_1p = p_var_1;
+    cout << "var_1p: " << var_1p << endl;
+    cout << "var_1p: " << *var_1p << endl;
+
+    int *d = nullptr;
+    int * &dp = d;
+    
+
+    int c = 9;    
+    var_1p = &c;
+    cout << "var_1p: " << *var_1p << endl;
+
+    // 引用并不存在地址
+    // int ri=0;
+    // int &*p = &ri;  // wrong operation
 
     return 0;
 }

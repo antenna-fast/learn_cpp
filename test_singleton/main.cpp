@@ -28,7 +28,6 @@ private:
     const Tracker &operator=(const Tracker &signal);  // TODO: ?
 
     static Tracker* instance;
-
 };
 
 Tracker::Tracker()
@@ -51,8 +50,6 @@ int main(int argc, char** argv)
         cout << " argc not match, Usage: " << endl;
         return -1;
     }
-
-    // std::cout << "running: " << argv[0] << std::endl;
     
     // test singleton mode
     // yes, you will see that, *tracker_instance_1 = *tracker_instance_2

@@ -2,5 +2,6 @@
 .vscode/
 **/cmake-build-debug
 **/build
+**/build_js
 **/bin
 *.out

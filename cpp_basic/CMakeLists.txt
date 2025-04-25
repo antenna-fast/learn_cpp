@@ -10,13 +10,13 @@ add_executable(cpp_basic
         # test_array.cpp
         # test_tie_tuple.cpp
         # test_for.cpp
-        test_string.cpp
+        # test_string.cpp
         # test_enum.cpp
         # test_function.cpp
         # test_function_main.cpp
         # test_pointer.cpp
         # test_reference.cpp
-        # test_time.cpp
+        test_time.cpp
         # test_io.cpp
         # test_struct.cpp
         # test_bit_operation.cpp

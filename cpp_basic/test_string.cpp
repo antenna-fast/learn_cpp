@@ -32,6 +32,7 @@ int main(int argc, char** argv)
 
     cout << a.substr(0, pos) << endl;
     cout << a.substr(pos+1, 3) << endl;
+    cout << a.substr(pos+1, a.size()) << endl;
 
     // replace 
     a = a.replace(a.begin(), a.begin() + pos, "hehe");

@@ -1,3 +1,7 @@
+// 信号量
+
+// state: TODO
+
 #include <iostream>
 #include <thread>
 #include <semaphore>

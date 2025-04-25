@@ -75,6 +75,12 @@ int main()
     cout << "pointer test " << endl;
 
     // arr_pointer();
+    
+    int a = 10;
+    int *b = &a; // b: 指针变量
+    *b = 20;
+
+    std::cout << "b: " << b << " *b: " << *b << "  a: " << a << std::endl;
 
     // 取地址&操作符
     int var_1 = 0;
@@ -84,7 +90,7 @@ int main()
     cout << "position of var_2: " << &var_2 << endl;
     
     int var_3 = 666;
-    int *p_var_1;  // 指针变量
+    int *p_var_1;  
     p_var_1 = &var_3;
 
     cout << "var_3: " << var_3
@@ -96,8 +102,8 @@ int main()
 
     int *p_var_8 = &var_1;
     int *p_var_9 = p_var_8;
-    p_var_9 = &var_3;  // 改变了p_var_9的，看是否会影响p_var_8的value
-    cout << "p_var_8: " << *p_var_8 << endl;  // 不会
+    p_var_9 = &var_3;
+    cout << "p_var_8: " << *p_var_8 << endl;
 
     // test pointer function
     int var_no_p;

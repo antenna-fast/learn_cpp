@@ -10,7 +10,8 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     cout << "test right reference" << endl;
 
     int i = 5;  // the i is lvalue, the "5" is rvalue 

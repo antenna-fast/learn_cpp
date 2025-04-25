@@ -5,7 +5,6 @@
 #include <vector>
 #include <algorithm>
 
-
 using namespace std;
 
 
@@ -16,7 +15,7 @@ void basic_test()
         for (size_t j = 0; j < 10; j++)
         {
             cout << " " << i << "," << j << "   ";
-            if(j > 5){
+            if(j > 5) {
                 break;  // only break this aspect of loop
             } 
         }
@@ -25,8 +24,8 @@ void basic_test()
 
     cout << "fabs: " << fabs(std::numeric_limits<unsigned long int>::max()) << endl;
     cout << "max: " << std::numeric_limits<unsigned long int>::max() << endl;
-    ulong a = numeric_limits<unsigned long int>::max();
-    ulong b = 0;
+    unsigned long a = numeric_limits<unsigned long int>::max();
+    unsigned long b = 0;
     cout << ((a > b) ? (a - b) : (b - a)) << endl;
 }
 
@@ -67,12 +66,18 @@ int main(int argc, char** argv)
 {
     cout << "argc: " << argc << endl;
 
-    int i = 0;
-    while (1)
+    for (int i = 0; i<10; i++)
     {
-        i++;
+        std::cout << "i: " << i << std::endl;
     }
     
+    std::cout << std::endl;
+
+    for(int i = 10; i>0; i--)
+    {
+        std::cout << "i: " << i << std::endl;
+    }
+
     // test_for_each();
 
     // for (size_t i = 0, i3 = 0; i < 5; ++i)  // i: face_num
@@ -100,6 +105,10 @@ int main(int argc, char** argv)
 
     for (size_t i = 0; i < v.size(); i++)
     {
+        if(i > 5)
+        {
+            break;
+        }
         std::cout << v[i] << std::endl;
     }
     

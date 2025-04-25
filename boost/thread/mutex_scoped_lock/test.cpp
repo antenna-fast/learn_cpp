@@ -31,7 +31,7 @@ void print_block_scoped_lock (int n, char c) {
     std::cout << '\n';
     //   mtx.unlock();  // NOTE: if you forget to unlock after mtx.lock(), the other thread called this code fragment will be blocked!
 
-    // now using scoped_lock(), you do NOT have to un lock here! 
+    // now using scoped_lock(), you do NOT have to unlock here! 
     // because the scoped lock is smart lock which can release automatically!
 }
 

@@ -13,8 +13,11 @@ boost::atomic_int thread_counter(0);
 // demo1: void function
 void hello()
 {
-  thread_counter ++;  // ERROR: hello world from boost thread hello world from boost thread 22
-  cout << "hello world from boost thread " << thread_counter << endl;
+  // thread_counter ++;  // ERROR: hello world from boost thread hello world from boost thread 22
+  // cout << "hello world from boost thread " << thread_counter << endl;
+  std::cout << "hello thread" << std::endl;
+
+  return;
 }
 
 // demo2: 
@@ -22,7 +25,7 @@ void hello()
 // bind
 
 int main(int argc, char** argv) {
-    if(argc != 1){
+    if(argc != 1) {
         cout << " argc not match, Usage: " << endl;
         return -1;
     }
@@ -35,7 +38,8 @@ int main(int argc, char** argv) {
     hello_thread_1.join();
     hello_thread_2.join();
 
-    assert(thread_counter == 2);
+    // assert(thread_counter == 2);
 
+    hello_thread_1.detach();
     return 0;
 }

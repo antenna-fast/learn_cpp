@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -63,13 +64,13 @@ class Dog : public Animal{
     public:
     Dog();
 
-    string type;
+    string type = "123";
 };
 
 // init base class when buils constructor
 Dog::Dog():Animal("1234", 9, 9)  
 {
-
+    std::cout << "Dog init" << std::endl;
 }
 
 class Cat: public Animal{
@@ -94,5 +95,20 @@ int main(){
     Dog dog_1;
     dog_1.show();
 
+    // vector<Dog> dogs;
+    vector<Animal> animals;
+    for (size_t i = 0; i < 5; i++)
+    {
+        Dog dog;
+        std::cout << "dog.age : " << dog.age << std::endl;
+
+        animals.push_back(dog);
+    }
+    
+    for (size_t i = 0; i < 5; i++)
+    {
+        std::cout << animals.at(i).type << std::endl;
+    }
+    
     return 0;
 }

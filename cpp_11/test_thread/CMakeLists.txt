@@ -7,7 +7,7 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -O3 -pthread" )
 
 add_executable(
         cpp_11 
-        # test_thread.cpp
-        test_condition_variable.cpp
+        test_thread.cpp
+        # test_condition_variable.cpp
         # test_deadlock.cpp
 )

@@ -14,8 +14,8 @@ int main(int argc, char** argv){
     std::cout << "running: " << argv[0] << std::endl;
 
     async(launch::async, [](const char *message){
-		cout << message << flush;
-	}, "Hello, ");
+		    cout << message << flush;
+	    }, "Hello, ");
 	cout << "World!" << endl;
 
     return 0;

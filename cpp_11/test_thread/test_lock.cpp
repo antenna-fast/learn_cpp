@@ -72,22 +72,6 @@ void test_with_lock()
   th2.join();
 }
 
-// reference 
-// you should use 'ref' or 'cref'
-void add_1(int &a) {
-  a++;
-}
-
-void test_reference()
-{
-  cout << "test_reference" << endl;
-  int a = 0;
-  cout << "before a: " << a << endl;
-  // std::thread th3(add_1, a);  // will cause compile ERROR!
-  std::thread th3(add_1, std::ref(a));  // pass parameter by reference explicitly
-  th3.join();
-  cout << "after a: " << a << endl;
-}
 
 
 // test std::atomic和std::mutex
@@ -112,6 +96,7 @@ void test_lock()
   {
     x = thread(plus_val);
   }
+  
   // join
   for (auto &x:th)
   {
@@ -126,7 +111,6 @@ int main ()
 {
   // test_without_lock();
   test_with_lock();
-  // test_reference();
   // test_lock();
   return 0;
 }
